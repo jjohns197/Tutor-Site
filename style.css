@@ -1,0 +1,42 @@
+header{
+    padding-left: 30%;
+}
+fieldset{
+background-color:#fcfbfa;
+padding-left: 22.5%;
+margin: flex;
+
+}
+label, input{
+display: inline-block;
+}
+
+label {
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+.register-tutor label, .book-assignment label {
+    padding-left: 30%;
+}
+
+.enrollment-buttons{
+    padding:7%;
+}
+
+#cancel{
+    margin-left:3%;
+}
+.sidebar a:hover {
+    font-weight: 900;
+}
+body {
+    display: flex;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+}

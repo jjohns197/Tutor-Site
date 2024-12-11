@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <title>Student Search</title>
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .student-search-fset {
+            width: 300px;
+            height: 200px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            background-color: aliceblue;
+        }
+
+        .buttons {
+
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .buttons:hover {
+            background-color: var(--random-color);
+        }
+
+        .header-photo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('banner.jpg') center/cover no-repeat;
+        }
+
+        .image-container img {
+            margin-top: 250px;
+        }
+
+        .logo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav-placeholder">
+
+    </div>
+
+    <script>
+        $(function () {
+            $("#nav-placeholder").load("navbar.html");
+        });
+    </script>
+    <div class="header-photo">
+        <a href="index.html"> <img class="logo" src="c2educationSmall.png" alt="Top Image"></a>
+    </div>
+    <fieldset class="student-search-fset" name="student-search-fset">
+        <div class="student-search">
+            <header id="header">
+                <h3>Student Search</h3>
+            </header>
+            <form name="search-name-form" method="post" action="search.php" onsubmit="return validateForm();">
+                <label for="searchfname">Enter First Name:</label>
+                <input type="text" name="enterfname" id="enterfname"><br>
+                <label for="searchlname">Enter Last Name:</label>
+                <input type="text" name="enterlname" id="enterlname"><br>
+                <input type="submit" value="Find" id="find" class="buttons" onclick="validateForm();">
+                <input type="reset" value="Cancel" id="cancel" class="buttons"><br>
+            </form>
+        </div>
+    </fieldset>
+
+    <script>
+        function validateForm() {
+            var firstName = document.getElementById("enterfname").value;
+            var lastName = document.getElementById("enterlname").value;
+
+            if (firstName === "" && lastName === "") {
+                alert("Please enter a first name or last name.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+    <script>
+            const randomColors = ['#007880', '#EB8F21', '#AF2C66'];
+            document.documentElement.style.setProperty('--random-color', randomColors[Math.floor(Math.random() * randomColors.length)]);
+        </script>
+</body>
+
+</html>
